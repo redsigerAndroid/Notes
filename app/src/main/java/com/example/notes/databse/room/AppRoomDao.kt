@@ -14,4 +14,6 @@ interface AppRoomDao {
 
     @Delete
     suspend fun delete(note: AppNote)
+
+    //Just adding some changes
 }

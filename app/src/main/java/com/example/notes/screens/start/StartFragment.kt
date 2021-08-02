@@ -15,14 +15,14 @@ import kotlinx.android.synthetic.main.fragment_start.*
 
 class StartFragment : Fragment() {
 
-    private var _binding:FragmentStartBinding? = null
+    private var _binding : FragmentStartBinding? = null
     private val mBinding get() = _binding!!
-    private lateinit var mViewModel: StartFragmentViewModel
+    private lateinit var mViewModel : StartFragmentViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ) : View? {
         _binding = FragmentStartBinding.inflate(layoutInflater,container,false)
         return mBinding.root
     }
@@ -39,5 +39,10 @@ class StartFragment : Fragment() {
                 APP_ACTIVITY.mNavController.navigate(R.id.action_startFragment_to_mainFragment)
             }
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

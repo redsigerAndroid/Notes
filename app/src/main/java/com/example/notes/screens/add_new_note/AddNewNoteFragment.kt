@@ -36,12 +36,10 @@ class AddNewNoteFragment : Fragment() {
         mBinding.btnAddNote.setOnClickListener {
             val name = mBinding.inputNameNote.text.toString()
             val text = mBinding.inputTextNote.text.toString()
-
-            if (name.isEmpty()) {
+            if (name.isEmpty()){
                 showToast(getString(R.string.toast_enter_note_name))
             } else {
-
-                mViewModel.insert(AppNote(name = name, text = text)) {
+                mViewModel.insert(AppNote(name = name,text = text)){
                     APP_ACTIVITY.mNavController.navigate(R.id.action_addNewNoteFragment_to_mainFragment)
                 }
             }

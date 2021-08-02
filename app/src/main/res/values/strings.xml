@@ -4,4 +4,5 @@
     <string name="start_label">Что использовать?</string>
     <string name="start_btn_room">ROOM</string>
     <string name="titile">Заметки</string>
+    <string name="toast_enter_note_name">Введите название заметки</string>
 </resources>

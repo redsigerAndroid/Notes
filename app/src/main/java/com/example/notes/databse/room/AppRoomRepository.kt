@@ -4,9 +4,9 @@ import androidx.lifecycle.LiveData
 import com.example.notes.databse.DatabaseRepository
 import com.example.notes.models.AppNote
 
-class AppRoomRepository(private val appRoomDao: AppRoomDao):DatabaseRepository {
+class AppRoomRepository(private val appRoomDao: AppRoomDao) : DatabaseRepository {
 
-    override val allnotes: LiveData<List<AppNote>>
+    override val allNotes : LiveData<List<AppNote>>
         get() = appRoomDao.getAllNotes()
 
     override suspend fun insert(note: AppNote, onSuccess: () -> Unit) {
@@ -17,5 +17,9 @@ class AppRoomRepository(private val appRoomDao: AppRoomDao):DatabaseRepository {
     override suspend fun delete(note: AppNote, onSuccess: () -> Unit) {
         appRoomDao.delete(note)
         onSuccess()
+    }
+
+    override fun signOut(){
+
     }
 }
